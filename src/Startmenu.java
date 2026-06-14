@@ -55,7 +55,7 @@ public class Startmenu extends Application {
         stage.setTitle("4 Gewinnt – Startmenü");
         stage.show();
 
-        // --- Events ---
+        // --- Event ---
         startButton.setOnMouseClicked(e -> {
             try {
                 new Player1().start(new Stage());
@@ -64,7 +64,7 @@ public class Startmenu extends Application {
                 ex.printStackTrace();
             }
         });
-
+        // --- Event ---
         statsButton.setOnMouseClicked(e -> {
             try {
                 new PlayerStatistic().start(new Stage()); // Beispielklasse

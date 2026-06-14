@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 
 import java.util.List;
 
-public class Player1 extends Application {
+public class Player2 extends Application {
 
     private VBox root; // für Ansichtenwechsel
     private Stage mainStage; // um Stages schließen zu können
@@ -30,7 +30,7 @@ public class Player1 extends Application {
 
         Scene scene = new Scene(root, 400, 400);
         stage.setScene(scene);
-        stage.setTitle("Spieler 1");
+        stage.setTitle("Spieler 2");
         stage.show();
     }
 
@@ -39,7 +39,7 @@ public class Player1 extends Application {
         root.getChildren().clear();
 
         // Titel
-        Text title = new Text("Spieler 1");
+        Text title = new Text("Spieler 2");
         title.setFont(Font.font(35));
 
         // Kreis 1: Erstellen
@@ -79,7 +79,7 @@ public class Player1 extends Application {
     private void zeigeErstellenAnsicht() {
         root.getChildren().clear();
 
-        Text title = new Text("Spieler 1 erstellen");
+        Text title = new Text("Spieler 2 erstellen");
         title.setFont(Font.font(30));
 
         Text nameLabel = new Text("Name:");
@@ -105,11 +105,11 @@ public class Player1 extends Application {
             players.add(p);
             PlayerStorage.savePlayers(players);
 
-            System.out.println("Spieler 1 erstellt: " + name);
+            System.out.println("Spieler 2 erstellt: " + name);
 
             try {
-                new Player2().start(new Stage());
-                mainStage.close();
+                new GameBoard().start(new Stage());
+                mainStage.close(); // Player2 schließen
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -124,7 +124,7 @@ public class Player1 extends Application {
     private void zeigeLadenAnsicht() {
         root.getChildren().clear();
 
-        Text title = new Text("Spieler 1 laden");
+        Text title = new Text("Spieler 2 laden");
         title.setFont(Font.font(30));
 
         Text info = new Text("Spieler auswählen:");
@@ -145,11 +145,11 @@ public class Player1 extends Application {
 
                 // Spieler anklicken -> Player2 öffnen
                 t.setOnMouseClicked(e -> {
-                    System.out.println("Spieler 1 geladen: " + p.getName());
+                    System.out.println("Spieler 2 geladen: " + p.getName());
 
                     try {
-                        new Player2().start(new Stage());
-                        mainStage.close(); // Player1 schließen
+                        new GameBoard().start(new Stage());
+                        mainStage.close(); // Player2 schließen
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
