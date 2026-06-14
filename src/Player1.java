@@ -64,5 +64,17 @@ public class Player1 extends Application {
             System.out.println("Spieler auswählen...");
 
         });
+
+        // Wenn erstellen gedrückt wird
+        erstellenButton.setOnMouseClicked(e -> {
+            Player p1 = new Player("Spieler 1"); // später mit Eingabefeld
+            Player p2 = new Player("Spieler 2");
+            try {
+                new GameBoard(p1, p2).start(new Stage());
+                stage.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 }
