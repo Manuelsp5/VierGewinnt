@@ -78,7 +78,6 @@ public class Player1 extends Application {
             Player p2 = new Player("Spieler 2");
             try {
                 new GameBoard(p1, p2).start(new Stage());
-                stage.close();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
