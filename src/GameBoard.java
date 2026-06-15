@@ -28,10 +28,11 @@ public class GameBoard extends Application {
         this.player2 = p2;
     }
 
-    public GameBoard() {
-        this.player1 = new Player("Spieler 1");
-        this.player2 = new Player("Spieler 2");
+    public GameBoard(){
+        this.player1 = new Player("Spieler1");
+        this.player2 = new Player("Spieler2");
     }
+
 
     @Override
     public void start(Stage stage) {
@@ -57,19 +58,6 @@ public class GameBoard extends Application {
 
                 // Klick
                 circle.setOnMouseClicked(e -> handleClick(col, stage));
-
-                // Hover nur auf leeren Feldern
-                circle.setOnMouseEntered(e -> {
-                    if (board[row][col] == 0) {
-                        circle.setFill(Color.SILVER);
-                    }
-                });
-
-                circle.setOnMouseExited(e -> {
-                    if (board[row][col] == 0) {
-                        circle.setFill(Color.LIGHTGRAY);
-                    }
-                });
 
                 circles[r][c] = circle;
                 grid.add(circle, c, r);

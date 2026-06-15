@@ -5,6 +5,7 @@ import java.util.List;
 
 public class PlayerStorage {
     private static final String FILE_NAME = "PlayerStorage.csv";
+
     public static void savePlayers(List<Player> players) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
             for (Player p : players) {
